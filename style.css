@@ -27,36 +27,76 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    font-family: var(--stand-font);
+}
 
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 60px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.text-area {
+    width: clamp(32rem, 30vw, 54rem) ;
+}
+
+h1, h2, .product-overview {
+    text-align: center;
+}
+
+.overview h3 {
+    font-weight: 600;
+    color: var(--grey500)
+}
+
+.overview p {
+    color: var(--grey400);
+}
+
+.card {
+    position: relative;
+    width: 314px;
+    height: 250px;
+    border-radius: 8px;
+    box-shadow: 1px 5px 10px 2px hsla(0,0%,0%,0.2);
 }
 
 .title {
     line-height: var(--standard-line-height);
-    font-family: var(--stand-font);
     font-size: 3.6rem;
     letter-spacing: var(--letter-spacing);
     font-weight: 200;
+    color: var(--grey400);
 }
 
 .slogan {
     line-height: var(--standard-line-height);
-    font-family: var(--stand-font);
     font-size: 3.6rem;
     letter-spacing: var(--letter-spacing);
     font-weight: 600;
+    color: var(--grey500)
 }
 
 .product-overview {
     line-height:  var(--standard-line-height);
-    font-family: var(--stand-font);
     font-size: 1.5rem;
     letter-spacing: var(--letter-spacing);
     font-weight: 400;
+    color: var(--grey500)
 }
 
 .card-name {
     line-height:  135%;
-    font-family: var(--stand-font);
     font-size: 2rem;
     letter-spacing: var(--letter-spacing);
     font-weight: 400;
@@ -64,10 +104,41 @@ body {
 
 .card-description {
     line-height:  160%;
-    font-family: var(--stand-font);
     font-size: 1.3rem;
-    letter-spacing: var(--letter-spacing);
     font-weight: 400;
+}
+
+.descirption {
+    margin-top: 0.4rem;
+    background-color: #ffffff;
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 0.4rem;
+    background: var(--prime-cyan);
+    border-radius: 16px 16px 0px 0px;
+}
+
+.team-builder::before {
+    background: var(--prime-red);
+}
+
+.karma::before {
+    background: var(--prime-orange);
+}
+
+.calculator::before {
+    background: var(--prime-blue);
+}
+
+.overview {
+    width: 25rem;
+    margin: 3.2rem;
 }
 
 .hero {
@@ -75,4 +146,66 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.card-image {
+    padding-left: 20rem;
+}
+
+
+@media (min-width: 1024px) {
+    .container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 2rem;
+    }
+
+    .supervisor {
+        grid-column: 1;
+        grid-row: 1/3;
+        align-self: center;
+    }
+
+    .karma {
+        grid-column: 2;
+        grid-row: 2;
+    }
+
+    .calculator {
+        grid-column: 3;
+        grid-row: 1/3;
+        align-self: center;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px){
+    .container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        gap: 2rem;
+    }
+
+    .team-builder {
+        grid-column: 1/3;
+        grid-row: 1;
+        justify-self: center;
+    }
+
+    .supervisor {
+        grid-row: 2;
+        grid-column: 1;
+    }
+
+    .karma {
+        grid-row: 2;
+        grid-column: 2;
+    }
+
+    .calculator {
+        grid-column: 1/3;
+        grid-row: 3;
+        justify-self: center;
+    }
 }
